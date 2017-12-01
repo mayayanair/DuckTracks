@@ -5,7 +5,7 @@ import requests
 FB_ACCESS_TOKEN = 'EAAVVA1mZAbx4BAOMqkvQZCEZBbpTi7CMXE78V37cAcfV8KQgaoWv6cH3OHsqDBpvUEtgls4cmQNqBZBqZBZBdLNEZA08jYABi641Bjxt5PnAL2JzjbedCNs9Fk5IAZBxyjl0QRNjAV9yYIWLgvZACcrnEnIZCV7jPmBzrFMhAQB2VEZAgZDZD'
 SEND_API_URL = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + 'EAAVVA1mZAbx4BAOMqkvQZCEZBbpTi7CMXE78V37cAcfV8KQgaoWv6cH3OHsqDBpvUEtgls4cmQNqBZBqZBZBdLNEZA08jYABi641Bjxt5PnAL2JzjbedCNs9Fk5IAZBxyjl0QRNjAV9yYIWLgvZACcrnEnIZCV7jPmBzrFMhAQB2VEZAgZDZD'
     
-def send_genres_message(messenger_id, text, categories):
+def send_genres_message(messenger_id, text, genre):
     # Package params into dictionaries for POST request
     quick_replies = [] # append to
     for g in genre:
