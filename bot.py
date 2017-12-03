@@ -6,8 +6,7 @@ from helpers import response
 from db import User
 from send import GenericTemplateMessage, GenericTemplateElement, URLButton 
 
-genres = ['Folk & Singer-Songwriter', 'Hip-hop & Rap', 'House', 'Indie', 'Jazz & Blues', 'Latin', 'Metal', 'Piano', 'Pop', 'R&B & Soul', 'Reggae', 'Reggaeton', 'Rock', 'Soundtrack', 'Techno', 'Trance', 'Trap', 'Triphop', 'World']
-
+genres = ['Classical','Country','Dance & EDM','Folk & Singer-Songwriter','Hip-hop & Rap','Indie','Latin','Pop','R&B & Soul','Trap','World']
 
 def response_handler(request):
      # Parse request and get the data we want out of it like messenger_id, text, and coordinates.
@@ -26,13 +25,13 @@ def response_handler(request):
         type_handler(messenger_parser, user)
     else:
         # call api and get results
-        results_handler(messenger_parser,user)
+        results_handler(messenger_parser, user)
 
     # return the response to Facebook.
     return response()
 
 def type_handler(messenger_parser, user):
-    genres_text = ('Please choose from the following genres: ')
+    genres_text = 'Please choose from the following genres: '
     send_genres_message(user.messenger_id, genres_text, genres)
     user.state = 'ask_results'
     user.save()
